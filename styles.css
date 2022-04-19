@@ -1,0 +1,158 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  box-shadow: 5px 5px 20px 1px;
+  background-color: #77dd77;
+
+  height: 50px;
+}
+.navlogo:hover {
+  transform: rotateY(360deg);
+  transition: 2s;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+
+  width: 70vw;
+
+  list-style: none;
+}
+
+.navbar > li > a {
+  font-family: "Permanent Marker", cursive;
+  font-size: 30px;
+  text-decoration: none;
+  color: #fa8072;
+}
+
+.navbar > li > a:hover {
+  text-decoration: underline;
+  transform: scale(1.2);
+}
+
+body {
+  height: 100vh;
+  background-color: #84b6f4;
+  overflow: none;
+}
+
+.body {
+  height: 91%;
+  overflow-y: scroll;
+}
+
+.novedades {
+  margin: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.novedades > h1 {
+  margin: 15px;
+  font-size: 35px;
+}
+
+.sliderContenedor {
+  width: 90vw;
+  padding: 15px 0px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+
+  border: solid gray;
+  border-radius: 15px;
+  box-shadow: 5px 5px 20px 5px;
+}
+
+@media (min-width: 200px) {
+  .sliderImagen {
+    border-radius: 15px;
+    width: 300px;
+    height: 200px;
+  }
+  .btnDesplazar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 30px;
+  }
+}
+@media (min-width: 600px) {
+  .sliderImagen {
+    border-radius: 15px;
+    width: 450px;
+    height: 350px;
+  }
+  .btnDesplazar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    font-size: 30px;
+  }
+}
+
+@media (min-width: 800px) {
+  .sliderImagen {
+    border-radius: 15px;
+    width: 500px;
+    height: 400px;
+  }
+  .btnDesplazar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    font-size: 30px;
+  }
+}
+
+.sliderImagen:nth-child(n) {
+  transform: rotateY(360deg);
+  transition: 2s;
+}
+
+.btnDesplazar:hover {
+  background-color: rgb(92, 88, 88);
+  color: orange;
+}
+
+.descripcion {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.descripcion > h1 {
+  font-size: 40px;
+}
+
+.descripcion > p {
+  text-align: center;
+}
+
+.input {
+  padding: 8px;
+  display: block;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  width: 100%;
+}

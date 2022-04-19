@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="esp">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=The+Nautigal&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap"
+      rel="stylesheet"
+    />
+    <meta charset="UTF-8" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>Descartables</title>
+  </head>
+  <body>
+    <header>
+      <div class="nav">
+        <div>
+          <a href="./index.html">
+            <img class="navlogo"  src="./archivos/icons/logoIcons.png" alt="logo" width="45px" />
+          </a>
+        </div>
+        <nav>
+          <ul class="navbar">
+            <li>
+              <a href="./index.html">Inicio</a>
+            </li>
+            <li>
+              <a href="./pages/Catalogo.html">Catalogo</a>
+            </li>
+            <li>
+              <a href="./pages/Contacto.html">Contacto</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <section class="body">
+
+      <section name="sectionNovedades">
+        <div class="novedades">
+          <h1>Novedades</h1>
+          <div onkeyup="onKeyPressUp(event)" class="sliderContenedor">
+            <button
+              id="btnDesplazarIzq"
+              onClick="desplazarIzquierda()"
+              class="btnDesplazar btnDesplazarIzq"
+            >
+              <
+            </button>
+            <img
+              class="sliderImagen"
+              id="sliderImagen"
+              name="sliderImg"
+            />
+            <button
+              id="btnDesplazarDer"
+              onClick="desplazarDerecha()"
+              class="btnDesplazar btnDesplazarIzq"
+            >
+              >
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section name="sectionDescipcion">
+        <div class="descripcion">
+          <h1>Articulos descartables</h1>
+          <h2>Ventas mayoristas y minoristas</h2>
+          <h3>
+            Dedicados al rubro gastronómico, contamos con stock permanente y
+            variedad en artículos descartables.
+          </h3>
+          <p>
+            Nuestros principales clientes son pizzerías, restaurantes, bares,
+            panaderías, cervecerías, empresas de catering y público en general.
+            Contamos con un amplio salón de ventas, góndolas, dónde el público
+            puede encontrar todo lo que necesita para su negocio, hogar o
+            festejo. Ofrecemos a comerciantes de diferentes rubros la
+            oportunidad de contar con la más amplia variedad de productos
+            brindando atención y asesoramiento.
+          </p>
+        </div>
+      </section>
+    </section>
+    <footer></footer>
+
+    <script src="./myscrip.js"></script>
+  </body>
+</html>
