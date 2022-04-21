@@ -18,8 +18,8 @@ window.addEventListener("load", function () {
 });
 
 const cambiarImagen = () => {
-  //sliderImage.style.transform = "rotateX(360deg)";
-  //sliderImage.style.transition = "2s";
+  sliderImage.style.transform = "rotateX(360deg)";
+  sliderImage.style.transition = "2s";
   sliderImage.src = imagenes[selectSlider];
 };
 
@@ -57,3 +57,4 @@ const onKeyPressUp = (event) => {
       break;
   }
 };
+

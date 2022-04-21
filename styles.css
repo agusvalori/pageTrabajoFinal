@@ -166,7 +166,7 @@ body {
   flex-direction: column;
 
   width: 500px;
-  padding: 20px;  
+  padding: 20px;
 
   border: 0px solid black;
   border-radius: 15px;
@@ -174,12 +174,55 @@ body {
   box-shadow: 2px 2px 2px 1px;
 }
 
-.formSelect{
-    display: flex;
-    flex-direction: column;
+.formSelect {
+  display: flex;
+  flex-direction: column;
 }
 
-.formContacto > button{
-    border-radius: 15px;
-    margin-top: 20px;
+.formContacto > textarea {
+  resize: none;
+}
+
+.formContacto > button {
+  border-radius: 15px;
+  margin-top: 20px;
+}
+
+.catalogo {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
+.target {
+  display: flex;
+  border: solid 1px transparent;
+  border-radius: 15px;
+  padding: 5px;
+  background-color: black;
+}
+
+.targetHeader {
+  width: 100px;
+  height: 100px;
+
+  background-color: red;
+}
+
+.targetBody {
+  width: 200px;
+  height: 100px;
+  background-color: blue;
+
+}
+
+.targetTitle {
+  width: 100%;
+  height: 30%;
+  background-color: #77dd77;
+}
+.targetDescription {
+  width: 100%;
+  height: 70%;
+  background-color: orange;
 }
