@@ -27,16 +27,16 @@
           </a>
         </div>
         <nav>
-          <ul class="navbar">
+          <ul id="navbar" class="navbar">
             <li>
               <a href="./index.html">Inicio</a>
             </li>
             <li>
-              <a href="./pages/Catalogo.html">Catalogo</a>
+              <a href="./pages/catalogo/Catalogo.html">Catalogo</a>
             </li>
             <li>
-              <a href="./pages/Contacto.html">Contacto</a>
-            </li>
+              <a href="./pages/contacto/Contacto.html">Contacto</a>
+            </li>            
           </ul>
         </nav>
       </div>
@@ -49,8 +49,7 @@
           <h1>Novedades</h1>
           <div onkeyup="onKeyPressUp(event)" class="sliderContenedor">
             <button
-              id="btnDesplazarIzq"
-              onClick="desplazarIzquierda()"
+              id="btnDesplazarIzq"              
               class="btnDesplazar btnDesplazarIzq"
             >
               <
@@ -61,8 +60,7 @@
               name="sliderImg"
             />
             <button
-              id="btnDesplazarDer"
-              onClick="desplazarDerecha()"
+              id="btnDesplazarDer"              
               class="btnDesplazar btnDesplazarIzq"
             >
               >
@@ -92,6 +90,6 @@
       </section>
     </section>
     <footer></footer>
-    <script src="./slider.js"></script>
+    <script src="./js/index.js" type="module"></script>    
   </body>
 </html>

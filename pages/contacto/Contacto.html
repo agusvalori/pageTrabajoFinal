@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="esp">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=The+Nautigal&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap"
+      rel="stylesheet"
+    />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../styles.css" />
+    <title>Contacto</title>
+  </head>
+  <body>
+    <header>
+      <div class="nav">
+        <div>
+          <a href="../../index.html">
+            <img
+              class="navlogo"
+              src="../../archivos/icons/logoIcons.png"
+              alt="logo"
+              width="45px"
+            />
+          </a>
+        </div>
+        <nav>
+          <ul class="navbar">
+            <li>
+              <a href="../../index.html">Inicio</a>
+            </li>
+            <li>
+              <a href="../catalogo/Catalogo.html">Catalogo</a>
+            </li>
+            <li>
+              <a href="../contacto/Contacto.html">Contacto</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <section class="contacto">
+      <div class="contactoPaper">
+        <form
+          id="formContacto"
+          class="formContacto"
+          onsubmit="HandleOnSubmit()"
+        >
+          <label>Nombre</label>
+          <input name="name" onchange="HandleInputChange(event)" required />
+
+          <label>Correo</label>
+          <input name="email" onchange="HandleInputChange(event)" />
+
+          <label>Celular</label>
+          <input name="phone" onchange="HandleInputChange(event)" />
+
+          <div class="formSelect">
+            <label>Su interes</label>
+            <select name="selectInteres" onchange="HandleInputChange(event)">
+              <option value="cliente">Cliente</option>
+              <option value="proveedor">Proveedor</option>
+            </select>
+          </div>
+
+          <label>Comentario</label>
+          <textarea
+            name="comentario"
+            rows="5"
+            onchange="HandleInputChange(event)"
+            required
+          ></textarea>
+
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+
+      <div class="sectionMap">
+        <iframe
+          class="maps"
+          frameborder="0"
+          scrolling="no"
+          marginheight="0"
+          marginwidth="0"
+          id="gmap_canvas"
+          src="https://maps.google.com/maps?width=520&amp;height=400&amp;hl=en&amp;q=Lainez%2017%20Villa%20mercedes+(Descartables)&amp;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+        ></iframe>
+        <a href="https://www.symptoma.es/es/info/covid-19"
+          >test diagnóstico Coronavirus</a
+        >
+        <script
+          type="text/javascript"
+          src="https://embedmaps.com/google-maps-authorization/script.js?id=1df5531c3c09dde7f6cefef70d4aaa13278a6628"
+        ></script>
+      </div>
+    </section>
+    <script src="./contacto.js"></script>
+  </body>
+</html>
