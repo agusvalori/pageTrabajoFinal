@@ -14,7 +14,7 @@
   align-items: center;
 
   box-shadow: 5px 5px 20px 1px;
-  background-color: #77dd77;
+  background-color: #98FB98;  
 
   height: 50px;
 }
@@ -51,7 +51,7 @@
 
 body {
   height: 100vh;
-  background-color: #84b6f4;
+  background-color: #B0E0E6;
   overflow: none;
 }
 

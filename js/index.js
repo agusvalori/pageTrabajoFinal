@@ -2,7 +2,6 @@ import { sliderNovedades } from "./sliderNovedades.js";
 
 sliderNovedades();
 
-
 var navbarUl = document.getElementById("navbar");
 var navbarLi = document.createElement("li");
 var navbarA = document.createElement("a");

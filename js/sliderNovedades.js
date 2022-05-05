@@ -10,9 +10,12 @@ export const sliderNovedades = () => {
   var btnDesplazarIzq = document.getElementById("btnDesplazarIzq");
 
   var imagenes = [];
+
   window.addEventListener("load", function () {
     imagenes = articulosNovedades;
     cambiarImagen(imagenes[selectSlider]);
+    
+    setInterval(desplazarDer, 3000);
   });
 
   const cambiarImagen = (image) => {
@@ -20,6 +23,16 @@ export const sliderNovedades = () => {
   };
 
   btnDesplazarIzq.onclick = function () {
+    desplazarIzq();
+  };
+
+ 
+
+  btnDesplazarDer.onclick = function () {
+    desplazarDer();
+  };
+
+  const desplazarIzq = () => {
     if (selectSlider > 0) {
       selectSlider--;
     } else {
@@ -28,7 +41,7 @@ export const sliderNovedades = () => {
     cambiarImagen(imagenes[selectSlider]);
   };
 
-  btnDesplazarDer.onclick = function () {
+  const desplazarDer = () => {
     if (selectSlider < imagenes.length - 1) {
       selectSlider++;
     } else {

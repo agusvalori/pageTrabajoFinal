@@ -25,3 +25,4 @@ export const  articulosCatalogo = [
       src: "../../archivos/image/catalogo/image5.jpg",
     },
   ];
+
