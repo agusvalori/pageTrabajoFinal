@@ -1,20 +1,50 @@
 <!DOCTYPE html>
 <html lang="esp">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../styles.css" />
     <title>Document</title>
-</head>
-<body id="adminBody">
-    <section>
-        <button id="bntAdminModNov">Cargar articulos novedades</button>
+  </head>
+  <body id="adminBody">
+    <header>
+      <div class="nav">
+        <nav>
+          <ul class="navbar">
+            <li>
+              <a href="../../index.html">Inicio</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <section id="adminTabContent" class="tabContent">
+      <div id="adminTabHeader" class="tabHeader">
+        <button id="bntAdminTabNov">Cargar articulos novedades</button>
+        <button id="bntAdminTabCat">Cargar articulos catalogo</button>
+      </div>
+      <div id="adminTabBody" class="tabBody">
+        
+          <form class="formAdmin">
+            <div class="formAdminTitle">
+              <label>Insertar titulo</label>
+              <input name="title" />
+            </div>
+            <div class="formAdminDescription"></div>
+              <label>Insertar descripsion</label>
+              <input name="description" />
+            </div>
+            <div class="formAdminImage">
+              <label>Insertar Imagen</label>
+              <input name="ïmage" type="file" />
+            </div>
+            <button>Cargar articulo</button>
+          </form>
+        </div>
+      
     </section>
 
-    <section>
-        <button id="bntAdminModCat">Cargar articulos catalogo</button>
-    </section>
-    
-    <script src="./admin.js" type="module" ></script>
-</body>
+    <script src="./admin.js" type="module"></script>
+  </body>
 </html>

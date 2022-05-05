@@ -1,19 +1,18 @@
-console.log("Admin")
+console.log("Admin");
 
-var adminBody = document.getElementById("adminBody");
-var bntAdminModCat = document.getElementById("bntAdminModCat");
-var bntAdminModNov = document.getElementById("bntAdminModNov");
+var tabBody = document.getElementById("adminTabBody");
+var bntAdminTabCat = document.getElementById("bntAdminTabCat");
+var bntAdminTabNov = document.getElementById("bntAdminTabNov");
 
-bntAdminModNov.onclick = function () {
-    adminBody.style.backgroundColor = "red";
-    modal();
+var tabCatalogo = document.createElement("div");
+var tabNovedades = document.createElement("div");
+
+bntAdminTabNov.onclick = function () {
+  tabBody.replaceChildren(tabNovedades, tabCatalogo);
+  tabCatalogo.remove();
 };
-bntAdminModCat.onclick = function () {
-    adminBody.style.backgroundColor = "blue";
+bntAdminTabCat.onclick = function () {
+  tabBody.replaceChildren(tabCatalogo, tabNovedades);
+  tabNovedades.remove();
 };
 
-const modal = ()=>{
-    var modalContent = document.createElement("div")
-    modalContent.className = "modalContent"
-
-}
