@@ -1,18 +1,36 @@
-console.log("Admin");
+//alert("Las imagenes se quedaran guardadas de manera local")
 
-var tabBody = document.getElementById("adminTabBody");
-var bntAdminTabCat = document.getElementById("bntAdminTabCat");
-var bntAdminTabNov = document.getElementById("bntAdminTabNov");
+import { addData, readData } from "../../servicios/indexedDb.js";
 
-var tabCatalogo = document.createElement("div");
-var tabNovedades = document.createElement("div");
 
-bntAdminTabNov.onclick = function () {
-  tabBody.replaceChildren(tabNovedades, tabCatalogo);
-  tabCatalogo.remove();
+let adminForm = document.getElementById("adminForm");
+let inputTitle = document.getElementById("adminInTitle");
+let inputDescription = document.getElementById("adminInDescription");
+let inputImage = document.getElementById("adminInImage");
+let imagePreview = document.getElementById("adminPrevImg");
+
+adminForm.onsubmit = (event) => AdminOnSubmit(event);
+inputTitle.onchange = (event) => HandleInputChange(event);
+inputDescription.onchange = (event) => HandleInputChange(event);
+inputImage.onchange = (event) => HandleInputChange(event);
+
+let article;
+let data=[];
+
+const HandleInputChange = () => {
+  const { name, files, value } = event.target;
+
+  if (files && files[0]) {
+    article = { ...article, [name]: URL.createObjectURL(files[0]) };
+  } else {
+    article = { ...article, [name]: value };
+  }
 };
-bntAdminTabCat.onclick = function () {
-  tabBody.replaceChildren(tabCatalogo, tabNovedades);
-  tabNovedades.remove();
-};
 
+const AdminOnSubmit = (event) => {
+  event.preventDefault();  
+  console.log(article);
+  addData(article)
+  readData(data);
+  console.log("admin: ",data)
+};

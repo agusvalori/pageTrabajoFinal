@@ -1,4 +1,5 @@
 import { sliderNovedades } from "./sliderNovedades.js";
+import "../servicios/indexedDb.JS"
 
 sliderNovedades();
 

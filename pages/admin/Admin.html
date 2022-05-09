@@ -19,32 +19,26 @@
         </nav>
       </div>
     </header>
-    <section id="adminTabContent" class="tabContent">
-      <div id="adminTabHeader" class="tabHeader">
-        <button id="bntAdminTabNov">Cargar articulos novedades</button>
-        <button id="bntAdminTabCat">Cargar articulos catalogo</button>
-      </div>
-      <div id="adminTabBody" class="tabBody">
-        
-          <form class="formAdmin">
-            <div class="formAdminTitle">
-              <label>Insertar titulo</label>
-              <input name="title" />
-            </div>
-            <div class="formAdminDescription"></div>
-              <label>Insertar descripsion</label>
-              <input name="description" />
-            </div>
-            <div class="formAdminImage">
-              <label>Insertar Imagen</label>
-              <input name="ïmage" type="file" />
-            </div>
-            <button>Cargar articulo</button>
-          </form>
-        </div>
-      
-    </section>
+   <main>
+     <div>
 
+     </div>
+     <form id="adminForm">
+       <label>Titulo</label>
+       <input id="adminInTitle" name="title" type="text"  />
+       <label>Descripcion</label>
+       <input id="adminInDescription" name="description" type="text" />
+       <label>Imagen</label>
+       <input id="adminInImage" name="image" type="file"/>
+
+       <button type="submit" >Cargar Articulo</button>
+     </form>
+     <div>
+       <img alt="previsualizacion" id="adminPrevImg" />
+     </div>
+   </main>
+   
     <script src="./admin.js" type="module"></script>
+    
   </body>
 </html>
