@@ -1,13 +1,3 @@
-import { sliderNovedades } from "./sliderNovedades.js";
-import "../servicios/indexedDb.JS"
+console.log("Iniciando pagina web M&V Descartables")
+console.log("Datos de contacto",{Whatsapp: "2664860724",Dirección: "Lainez 17, Villa Mercedes, San Luis", instagram:'https://www.instagram.com/myvdescartables/'})
 
-sliderNovedades();
-
-var navbarUl = document.getElementById("navbar");
-var navbarLi = document.createElement("li");
-var navbarA = document.createElement("a");
-var navbarAText = document.createTextNode("Admin");
-navbarA.appendChild(navbarAText);
-navbarA.href = "./pages/admin/Admin.html";
-navbarLi.appendChild(navbarA);
-navbarUl.appendChild(navbarLi);

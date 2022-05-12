@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="esp">
   <head>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -11,11 +12,20 @@
       href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap"
       rel="stylesheet"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Henny+Penny&family=Luckiest+Guy&family=Macondo&family=Permanent+Marker&display=swap"
+      rel="stylesheet"
+    />
     <meta charset="UTF-8" />
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./styles.css" />
+
+    <link rel="icon" type="image/png" href="./archivos/icons/logoicons.png"/>
+    <meta name="description" content="Articulos Descartables">
     <title>Descartables</title>
   </head>
   <body>
@@ -23,74 +33,90 @@
       <div class="nav">
         <div>
           <a href="./index.html">
-            <img class="navlogo"  src="./archivos/icons/logoIcons.png" alt="logo" width="45px" />
+            <img
+              class="navlogo"
+              src="./archivos/icons/logoIcons.png"
+              alt="logo"
+              width="45px"
+            />
           </a>
         </div>
         <nav>
           <ul id="navbar" class="navbar">
             <li>
-              <a href="./index.html">Inicio</a>
+              <a class="active" href="./index.html">Inicio</a>
             </li>
             <li>
               <a href="./pages/catalogo/Catalogo.html">Catalogo</a>
             </li>
             <li>
               <a href="./pages/contacto/Contacto.html">Contacto</a>
-            </li>            
+            </li>
           </ul>
         </nav>
+        <div>
+          <a href="./index.html">
+            <img
+              class="navlogo"
+              src="./archivos/icons/logoIcons.png"
+              alt="logo"
+              width="45px"
+            />
+          </a>
+        </div>
       </div>
     </header>
 
-    <section class="body">
-
-      <section name="sectionNovedades">
-        <div class="novedades">
-          <h1>Novedades</h1>
-          <div onkeyup="onKeyPressUp(event)" class="sliderContenedor">
-            <button
-              id="btnDesplazarIzq"              
-              class="btnDesplazar btnDesplazarIzq"
-            >
-              <
-            </button>
-            <img
-              class="sliderImagen"
-              id="sliderImagen"
-              name="sliderImg"
-            />
-            <button
-              id="btnDesplazarDer"              
-              class="btnDesplazar btnDesplazarIzq"
-            >
-              >
-            </button>
-          </div>
+    <main class="main">
+      <section>
+        <div class="inicio-image-container flex-center m-2">
+          <img
+            class="inicio-imagenLogo"
+            alt="Logo M&V Descartables"
+            src="./archivos/icons/logoicons.png"
+          />
         </div>
-      </section>
-
-      <section name="sectionDescipcion">
-        <div class="descripcion">
+        <div class="inicio-text-container">
           <h1>Articulos descartables</h1>
-          <h2>Ventas mayoristas y minoristas</h2>
-          <h3>
-            Dedicados al rubro gastronómico, contamos con stock permanente y
-            variedad en artículos descartables.
-          </h3>
+          <h3>Ventas mayoristas y minoristas</h3>
+          <h5>Dedicados al rubro gastronómico.</h5>
+          <h5>
+            contamos con stock permanente y variedad en artículos descartables.
+          </h5>
           <p>
-            Nuestros principales clientes son pizzerías, restaurantes, bares,
-            panaderías, cervecerías, empresas de catering y público en general.
-            Contamos con un amplio salón de ventas, góndolas, dónde el público
-            puede encontrar todo lo que necesita para su negocio, hogar o
-            festejo. Ofrecemos a comerciantes de diferentes rubros la
-            oportunidad de contar con la más amplia variedad de productos
-            brindando atención y asesoramiento.
+            Nuestros principales clientes son rotiserias, panaderías,
+            carnicerias, pastelerias, restaurantes, bares, polirubro, empresas
+            de catering y público en general.
+          </p>
+          <p>
+            Contamos con la mas amplia variedad de productos dónde el público
+            puede encontrar todo lo que necesita para su negocio y
+            emprendimiento.
+          </p>
+          <p>
+            Ofrecemos a comerciantes de diferentes rubros la oportunidad de
+            contar el mejor asesoramiento, precio y calidad.
           </p>
         </div>
       </section>
-    </section>
-    <footer></footer>
-    
-    <script src="./js/index.js" type="module"></script>    
+    </main>
+    <footer class="footer">
+      <div class="footerContainer">
+        <a target="_blank" href="https://g.page/distribuidoramyv?share">
+          <img class="footerItems" src="./archivos/icons/ubicacionIcons.png" />
+        </a>
+        <a target="_blank" href='https://www.instagram.com/myvdescartables/' >
+          <img class="footerItems" src="./archivos/icons/instagramIcons.png" />
+        </a>
+        <a target="_blank" href='https://www.facebook.com/myvdescartables'>
+          <img class="footerItems" src="./archivos/icons/facebookIcons.png" />
+        </a>
+        <a target="_blank" href='https://api.whatsapp.com/send?phone=542664860724&text=Quiero+mas+información' >
+          <img class="footerItems" src="./archivos/icons/whatsAppIcons.png" />
+        </a>
+      </div>
+    </footer>
+
+    <script src="./js/index.js" type="module"></script>
   </body>
 </html>

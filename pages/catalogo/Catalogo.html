@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="esp">
-<head>
+  <head>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -11,40 +11,58 @@
       href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap"
       rel="stylesheet"
     />
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../../styles.css" />
     <title>Catalogo</title>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <div class="nav">
-          <div>
-            <a href="../../index.html">
-                <img class="navlogo" src="../../archivos/icons/logoIcons.png" alt="logo" width="45px" />
-            </a>
-          </div>
-          <nav>
-            <ul class="navbar">
-              <li>
-                <a href="../../index.html">Inicio</a>
-              </li>
-              <li>
-                <a href="../catalogo/Catalogo.html">Catalogo</a>
-              </li>
-              <li>
-                <a href="../contacto/Contacto.html">Contacto</a>
-              </li>
-            </ul>
-          </nav>
+      <div class="nav">
+        <div>
+          <a href="../../index.html">
+            <img
+              class="navlogo"
+              src="../../archivos/icons/logoIcons.png"
+              alt="logo"
+              width="45px"
+            />
+          </a>
         </div>
-      </header>
-      
-      <section id="catalogo" class="catalogo" >
-          
-      </section>      
-      <script src="./catalogo.js" type="module"></script>
-      
-</body>
+        <nav>
+          <ul class="navbar">
+            <li>
+              <a href="../../index.html">Inicio</a>
+            </li>
+            <li>
+              <a class="active" href="../catalogo/Catalogo.html">Catalogo</a>
+            </li>
+            <li>
+              <a href="../contacto/Contacto.html">Contacto</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <section name="">
+        <div class="novedadesContainer">          
+          <div class="sliderContainer">
+            <h1>Novedades</h1>
+            <button id="btnDesplazarIzq" class="btnDesplazar btnDesplazarIzq">
+              <img/>
+            </button>
+            <img class="sliderImagen" id="sliderImagen" name="sliderImg" />
+            <button id="btnDesplazarDer" class="btnDesplazar btnDesplazarIzq">
+              <img/>
+            </button>
+          </div>
+        </div>
+      </section>
+      <section id="catalogo" class="catalogo"></section>
+    </main>
+    
+    <script src="./catalogo.js" type="module"></script>
+  </body>
 </html>

@@ -10,7 +10,8 @@ export const  articulosCatalogo = [
       src: "../../archivos/image/catalogo/image2.jpg",
     },
     {
-      title: "Bolsas Camisetas",
+      title: "Bolsas Camisetas 40x50",
+      category: 'Bolsas Camisetas',
       description: "Descripcion 1",
       src: "../../archivos/image/catalogo/image3.jpg",
     },

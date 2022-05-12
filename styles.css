@@ -7,6 +7,21 @@
   display: none;
 }
 
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.m-1 {
+  margin: 5px;
+}
+
+.m-2 {
+  margin: 10px;
+}
+
+/*################################### NAV ######################################*/
 .nav {
   display: flex;
   flex-direction: row;
@@ -14,9 +29,9 @@
   align-items: center;
 
   box-shadow: 5px 5px 20px 1px;
-  background-color: #98FB98;  
+  background-color: #fffcb9;
 
-  height: 50px;
+  height: 60px;
 }
 .navlogo:hover {
   transform: rotateY(360deg);
@@ -34,10 +49,15 @@
 }
 
 .navbar > li > a {
-  font-family: "Permanent Marker", cursive;
+  font-family: "Macondo", cursive;
   font-size: 30px;
   text-decoration: none;
   color: #fa8072;
+}
+
+.navbar > li > .active {
+  color: #00c2ff;
+  font-size: 35px;
 }
 
 .navbar > li:hover {
@@ -49,18 +69,107 @@
   transform: scale(1.2);
 }
 
+/* ######################################## BODY  ########################################*/
+
 body {
   height: 100vh;
-  background-color: #B0E0E6;
+  background-color: #fdfcf3;
   overflow: none;
 }
 
-.body {
-  height: 91%;
+.main {
+  height: 80%;
   overflow-y: scroll;
+  padding-bottom: 50px;
+
+  background-image: url("./archivos/image/negocioImage.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 80%;
 }
 
-.novedades {
+/* ######################################## FOOTER  ########################################*/
+.footer {
+  position: fixed;
+  bottom: 0px;
+  
+}
+
+.footerContainer {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;  
+  width: 100vw;
+  height: 54px;  
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.footerItems {
+  height: 40px;
+}
+
+.footerItems:hover {
+  transform: scale(1.2);
+}
+
+/* ######################################## INICIO ########################################*/
+@keyframes imagenRodar {
+  0% {
+    left: -40%;
+    transform: rotate(-360deg) scale(0.2);
+  }
+  100% {
+    left: 0%;
+    transform: rotate(360deg);
+  }
+}
+
+.inicio-imagenLogo {
+  width: 300px;
+  border-radius: 50%;
+  position: relative;
+  left: 0%;
+  top: 0%;
+  animation-name: imagenRodar;
+  animation-duration: 4s;
+}
+
+.inicio-image-container {
+  height: 350px;
+  background-color: rgba(255, 255, 255, 0.4);
+  margin: 0px;
+}
+
+.inicio-text-container {
+  background: linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 0.6) 50%,
+    rgba(255, 255, 255, 0.4) 100%
+  );
+  text-align: center;
+  padding: 0% 10%;
+}
+
+.inicio-text-container > h1 {
+  font-family: "Henny Penny";
+  font-size: 70px;
+}
+.inicio-text-container > h3 {
+  font-family: "roboto";
+  font-size: 55px;
+}
+.inicio-text-container > h5 {
+  font-family: "roboto";
+  font-size: 30px;
+}
+.inicio-text-container > p {
+  font-family: "roboto";
+  font-size: 20px;
+}
+
+/* ######################################## PAGE CATALOGO ########################################*/
+/* NOVEDADES */
+.novedadesContainer {
   margin: 15px;
   display: flex;
   flex-direction: column;
@@ -68,12 +177,9 @@ body {
   align-items: center;
 }
 
-.novedades > h1 {
-  margin: 15px;
-  font-size: 35px;
-}
 
-.sliderContenedor {
+
+.slider{
   width: 90vw;
   padding: 15px 0px;
 
@@ -83,11 +189,11 @@ body {
   align-items: center;
 
   border: solid gray;
-  border-radius: 15px;
+  border-radius: 100px;
   box-shadow: 5px 5px 20px 5px;
 }
 
-.sliderImagen{
+.sliderImagenContainer {
   transform: rotateY(360deg);
   transition: 2s;
 }
@@ -133,11 +239,12 @@ body {
   }
 }
 
-
 .btnDesplazar:hover {
   background-color: rgb(92, 88, 88);
   color: orange;
 }
+
+
 
 .descripcion {
   display: flex;
@@ -153,7 +260,6 @@ body {
 .descripcion > p {
   text-align: center;
 }
-
 
 /* ################# PAGE CATALOGO #######################*/
 
@@ -173,13 +279,12 @@ body {
   min-width: 250px;
   height: 35%;
   min-height: 200px;
-  
 
-  margin: 6px ;
-  
+  margin: 6px;
+
   border-radius: 15px;
   padding: 5px;
-  
+
   box-shadow: 5px 5px 5px 2px;
 }
 
@@ -195,18 +300,14 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  
 }
-.targetImg{
+.targetImg {
   width: 90%;
   height: 90%;
-
-  
 }
 .targetBody {
-  width:70%;
+  width: 70%;
   background-color: blue;
-
 }
 
 .targetTitle {
@@ -217,8 +318,8 @@ body {
   text-align: center;
 }
 
-.targetTitleText{
-color: red;
+.targetTitleText {
+  color: red;
 }
 
 .targetDescription {
@@ -229,14 +330,12 @@ color: red;
   text-align: center;
 }
 
-.targetDescriptionText{
-font-size: 15px;
-
+.targetDescriptionText {
+  font-size: 15px;
 }
 
-
 /* ################# PAGE CONTACTO #######################*/
-.contactoBody{
+.contactoBody {
   display: flex;
   flex-direction: row-reverse;
   justify-content: center;
@@ -244,7 +343,6 @@ font-size: 15px;
   width: 100%;
   padding: 20px;
 }
-
 
 .contactoPaper {
   display: flex;
@@ -281,17 +379,13 @@ font-size: 15px;
   margin-top: 20px;
 }
 
-
-.sectionMap{
+.sectionMap {
   width: 45%;
-
 }
-.maps{
+.maps {
   width: 90%;
   height: 90%;
   border-radius: 15px;
 }
 
-
 /* ################# PAGE ADMIN #######################*/
-

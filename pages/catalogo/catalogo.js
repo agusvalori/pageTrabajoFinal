@@ -1,10 +1,11 @@
 import { articulosCatalogo } from "../../js/articulosCatalogo.js";
+import { sliderNovedades } from "../../js/sliderNovedades.js";
+sliderNovedades();
 
 window.addEventListener("load", function () {
-  var articulo = articulosCatalogo
+  var articulo = articulosCatalogo;
 
-  articulo.forEach(article => crearTarget(article))
-  
+  articulo.forEach((article) => crearTarget(article));
 });
 
 const crearTarget = (article) => {
@@ -28,21 +29,21 @@ const crearTarget = (article) => {
 
   const targetTitle = document.createElement("div");
   targetTitle.className = "targetTitle";
-  
-  const targetTitleText = document.createElement("h1"); 
-  targetTitleText.className="targetTitleText"
-  const titleText = document.createTextNode(article.title); 
-  targetTitleText.appendChild(titleText)
-  targetTitle.appendChild(targetTitleText)
+
+  const targetTitleText = document.createElement("h1");
+  targetTitleText.className = "targetTitleText";
+  const titleText = document.createTextNode(article.title);
+  targetTitleText.appendChild(titleText);
+  targetTitle.appendChild(targetTitleText);
 
   const targetDescription = document.createElement("div");
   targetDescription.className = "targetDescription";
 
-  const targetDescriptionText = document.createElement("p"); 
-  targetDescriptionText.className="targetDescriptionText"
-  const descriptionText = document.createTextNode(article.description); 
-  targetDescriptionText.appendChild(descriptionText)
-  targetDescription.appendChild(targetDescriptionText)
+  const targetDescriptionText = document.createElement("p");
+  targetDescriptionText.className = "targetDescriptionText";
+  const descriptionText = document.createTextNode(article.description);
+  targetDescriptionText.appendChild(descriptionText);
+  targetDescription.appendChild(targetDescriptionText);
 
   targetBody.appendChild(targetTitle);
   targetBody.appendChild(targetDescription);
