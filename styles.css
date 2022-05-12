@@ -169,17 +169,20 @@ body {
 
 /* ######################################## PAGE CATALOGO ########################################*/
 /* NOVEDADES */
-.novedadesContainer {
+.sliderContainer {
   margin: 15px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  border: solid gray;
+  border-radius: 100px;
+  box-shadow: 5px 5px 20px 5px;
 }
 
 
-
-.slider{
+.sliderBody{
   width: 90vw;
   padding: 15px 0px;
 
@@ -188,9 +191,7 @@ body {
   justify-content: space-evenly;
   align-items: center;
 
-  border: solid gray;
-  border-radius: 100px;
-  box-shadow: 5px 5px 20px 5px;
+  
 }
 
 .sliderImagenContainer {

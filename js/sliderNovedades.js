@@ -1,7 +1,7 @@
-import { articulosNovedades } from "./articulosNovedades.js";
-
-export const sliderNovedades = () => {
+export const sliderNovedades = (data) => {
   //################################### SLIDER #######################################
+
+  console.log(data)
   var selectSlider = 0; //Index del arreglo imagenes
 
   var sliderImage = document.getElementById("sliderImagen");
@@ -12,7 +12,7 @@ export const sliderNovedades = () => {
   var imagenes = [];
 
   window.addEventListener("load", function () {
-    imagenes = articulosNovedades;
+    imagenes = data;
     cambiarImagen(imagenes[selectSlider]);
     
     setInterval(desplazarDer, 3000);

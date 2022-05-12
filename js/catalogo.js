@@ -1,6 +1,8 @@
-import { articulosCatalogo } from "../../js/articulosCatalogo.js";
-import { sliderNovedades } from "../../js/sliderNovedades.js";
-sliderNovedades();
+import { articulosCatalogo } from "./articulosCatalogo.js";
+import { articulosNovedades } from "./articulosNovedades.js";
+import { sliderNovedades } from "./sliderNovedades.js";
+
+sliderNovedades(articulosNovedades);
 
 window.addEventListener("load", function () {
   var articulo = articulosCatalogo;
