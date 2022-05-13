@@ -1,8 +1,10 @@
 import { articulosCatalogo } from "./articulosCatalogo.js";
 import { articulosNovedades } from "./articulosNovedades.js";
+import { catalogoSelectCategory } from "./catalogoSelectCategory.js";
 import { sliderNovedades } from "./sliderNovedades.js";
 
 sliderNovedades(articulosNovedades);
+catalogoSelectCategory(articulosCatalogo);
 
 window.addEventListener("load", function () {
   var articulo = articulosCatalogo;
@@ -51,8 +53,8 @@ const crearTarget = (article) => {
   targetBody.appendChild(targetDescription);
 
   //############## TARGET ###################
-  const catalogo = document.getElementById("catalogo");
+  const catalogoArticulos = document.getElementById("catalogoArticulos");
   target.appendChild(targetHeader);
   target.appendChild(targetBody);
-  catalogo.appendChild(target);
+  catalogoArticulos.appendChild(target);
 };
