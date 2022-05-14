@@ -6,11 +6,18 @@ import { sliderNovedades } from "./sliderNovedades.js";
 sliderNovedades(articulosNovedades);
 catalogoSelectCategory(articulosCatalogo);
 
+
+
+
+
+
 window.addEventListener("load", function () {
   var articulo = articulosCatalogo;
-
   articulo.forEach((article) => crearTarget(article));
 });
+
+
+
 
 const crearTarget = (article) => {
   //############## TARGET HEADER ###################
