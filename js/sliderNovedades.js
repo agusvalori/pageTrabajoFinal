@@ -22,6 +22,7 @@ export const sliderNovedades = (data) => {
     sliderChangeAuto = setInterval(desplazarDer, 3000);
   });
 
+  // cambiamos la imagen desde los botones o desde el setInterval
   const cambiarImagen = (image) => {
     sliderImage.src = image.src;    
     if (selectSlider == 0) {
@@ -41,6 +42,7 @@ export const sliderNovedades = (data) => {
     showFooter(selectSlider);
   };
 
+
   btnDesplazarIzq.onclick = function () {
     desplazarIzq();
   };
@@ -49,6 +51,7 @@ export const sliderNovedades = (data) => {
     desplazarDer();
   };
 
+  
   const desplazarIzq = () => {
     if (selectSlider > 0) {
       selectSlider--;
@@ -58,6 +61,7 @@ export const sliderNovedades = (data) => {
     cambiarImagen(imagenes[selectSlider]);
   };
 
+  
   const desplazarDer = () => {
     if (selectSlider < imagenes.length - 1) {
       selectSlider++;
@@ -73,6 +77,8 @@ export const sliderNovedades = (data) => {
   var imgPlayPause = document.createElement("img");
   imgPlayPause.className = "imgPlayPause";
 
+
+  //controlamos el setInterval dandole pausa o play
   btnPlayPause.onclick = () => {
     playPause = !playPause;
     if (playPause) {
@@ -84,11 +90,14 @@ export const sliderNovedades = (data) => {
     }
   };
 
+  //cambiamos el icono de play o pause
   playPause
     ? (imgPlayPause.src = "../../archivos/icons/play.png")
     : (imgPlayPause.src = "../../archivos/icons/pause.png");
 
   btnPlayPause.appendChild(imgPlayPause);
+
+  //Creamos los botones que nos van a mostrar play o pause y los de posision
 
   const showFooter = (indexSlider) => {
     sliderFooter.innerHTML = "";
