@@ -304,9 +304,11 @@ body {
   box-shadow: 2px 2px 0px 2px;
 }
 
+/*
 .categoryItems:active{
   transform: scale(1.1);
 }
+*/
 
 .categoryItemsSelect{
   box-shadow: 0px 0px 0px 0px;
@@ -391,8 +393,9 @@ body {
 /* ################# PAGE CONTACTO #######################*/
 .contactoBody {
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
 
   width: 100%;
   padding: 20px;
@@ -434,12 +437,16 @@ body {
 }
 
 .sectionMap {
-  width: 45%;
+  display: flex;
+  justify-content: center;
+  width: 100vw;
 }
 .maps {
-  width: 90%;
+  width: 50%;
   height: 90%;
   border-radius: 15px;
+
+  box-shadow: 5px 5px 5px 2px;
 }
 
 /* ################# PAGE ADMIN #######################*/

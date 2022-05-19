@@ -55,7 +55,7 @@
         </nav>
       </div>
     </header>
-    <section class="contacto">
+    <section class="contactoBody">
       <div class="contactoPaper">
         <form
           id="formContacto"
@@ -63,7 +63,7 @@
           onsubmit="HandleOnSubmit()"
         >
           <label>Nombre</label>
-          <input name="name" onchange="HandleInputChange(event)" required />
+          <input name="name" onchange="HandleInputChange(event)" />
 
           <label>Correo</label>
           <input name="email" onchange="HandleInputChange(event)" />
@@ -83,7 +83,7 @@
           <textarea
             name="comentario"
             rows="5"
-            onchange="HandleInputChange(event)"
+            onchange="(event)=>HandleInputChange(event)"
             required
           ></textarea>
 
@@ -92,6 +92,8 @@
       </div>
 
       <div class="sectionMap">
+        <iframe class="maps" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1607.9937537679825!2d-65.46274493624696!3d-33.67452242952218!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x3edcde408ba2a24!2sM%26V%20Descartables%20y%20Condimentos!5e0!3m2!1ses-419!2sar!4v1652831934138!5m2!1ses-419!2sar" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <!--
         <iframe
           class="maps"
           frameborder="0"
@@ -108,8 +110,11 @@
           type="text/javascript"
           src="https://embedmaps.com/google-maps-authorization/script.js?id=1df5531c3c09dde7f6cefef70d4aaa13278a6628"
         ></script>
+        
+
+         -->
       </div>
     </section>
-    <script src="./contacto.js"></script>
+    <script src="../../js/contacto.js"></script>
   </body>
 </html>
