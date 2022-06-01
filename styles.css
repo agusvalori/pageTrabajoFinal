@@ -13,6 +13,9 @@
   align-items: center;
 }
 
+.w100 {
+  width: 100%;
+}
 .m-1 {
   margin: 5px;
 }
@@ -299,7 +302,7 @@ body {
   align-items: center;
   border: 1px solid black;
   border-radius: 50%;
-  
+
   background-color: #fa8072;
   box-shadow: 2px 2px 0px 2px;
 }
@@ -310,11 +313,11 @@ body {
 }
 */
 
-.categoryItemsSelect{
+.categoryItemsSelect {
   box-shadow: 0px 0px 0px 0px;
   position: relative;
   background-color: #fffcb9;
-  
+
   top: 5px;
   left: 5px;
 }
@@ -412,6 +415,7 @@ body {
 .formContacto {
   display: flex;
   flex-direction: column;
+  align-items: center;
 
   width: 500px;
   padding: 20px;
@@ -422,8 +426,20 @@ body {
   box-shadow: 2px 2px 2px 1px;
 }
 
+.formContacto input,
+select,
+textarea {
+  width: 90%;
+  border-radius: 5px;
+  border: #00c2ff 1px solid;
+  background-color: white;
+}
+
+.formContacto label {
+  color: #0097c5;
+}
+
 .formSelect {
-  display: flex;
   flex-direction: column;
 }
 
@@ -432,9 +448,20 @@ body {
 }
 
 .formContacto > button {
-  border-radius: 15px;
+  width: 50%;
+  height: 30px;
   margin-top: 20px;
+  border-radius: 15px;
+  background-color: #00b0e5;
+  color: white;
+  font-size: 15px;
+  z-index: 1;
+  transition: all .3s;
+  position: relative;
+  overflow: hidden;
 }
+
+
 
 .sectionMap {
   display: flex;
@@ -446,7 +473,17 @@ body {
   height: 90%;
   border-radius: 15px;
 
-  box-shadow: 5px 5px 5px 2px;
+  box-shadow: 5px 5px 20px;
 }
 
-/* ################# PAGE ADMIN #######################*/
+/* ################# Show MENSAJES #######################*/
+
+.alertContainer{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+}
