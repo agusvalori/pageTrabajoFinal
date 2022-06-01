@@ -1,8 +1,6 @@
-
-
 var values;
 var validacionMsg = "";
-
+var root = document.getElementById("root");
 var inName = document.getElementById("inName");
 var inEmail = document.getElementById("inEmail");
 var inPhone = document.getElementById("inPhone");
@@ -16,27 +14,32 @@ const HandleInputChange = (event) => {
 };
 
 const HandleOnSubmit = () => {
-  event.preventDefault();  
-
-  if (validacion()) {        
-    console.log(values.values());
-    //msgSucces({title:"",descripcion:values.toString()});
-    values = "";
-    document.getElementById("formContacto").reset();
-  } else {    
-    alert(validacionMsg);
+  if (validacion()) {
+    let msgDescription = [
+      "Nombre: " + values.name,
+      "Email: " + values.email,
+      "Celular: " + values.phone,
+      "Interes: " + values.selectInteres,
+      "Comentario: " + values.comentario,
+    ];
+    msgSucces("Los datos se enviaron con exito", msgDescription);
+    // values = "";
+    //document.getElementById("formContacto").reset();
+  } else {
+    msgWarning("Advertencia: Error al ingresar los datos", validacionMsg);
+    //alert(validacionMsg);
   }
-  
+  return false;
 };
 
 const validacion = () => {
-  validacionMsg = "";
+  validacionMsg = [];
   result = true;
 
   //validacion nombre
   if (/\d+/.test(values?.name) || values?.name == undefined) {
     result &= false;
-    validacionMsg += " Nombre invalido";
+    validacionMsg.push(" Nombre invalido");
     inName.style.border = "solid 1px red";
     inName.style.backgroundColor = "rgba(255, 0, 3, 0.4)";
   } else {
@@ -50,7 +53,7 @@ const validacion = () => {
     /\s+/.test(values?.email)
   ) {
     result &= false;
-    validacionMsg += "\n Correo invalido o posee espacios en blanco";
+    validacionMsg.push(" Correo invalido o posee espacios en blanco");
     inEmail.style.border = "solid 1px red";
     inEmail.style.backgroundColor = "rgba(255, 0, 3, 0.4)";
   } else {
@@ -60,7 +63,7 @@ const validacion = () => {
 
   //validacion del celular
   if (!Number.isInteger(+values?.phone) || /\s+/.test(values?.phone)) {
-    validacionMsg += "\n Telefono invalido o posee espacios en blanco";
+    validacionMsg.push("Telefono invalido o posee espacios en blanco");
     inPhone.style.border = "solid 1px red";
     inPhone.style.backgroundColor = "rgba(255, 0, 3, 0.4)";
     result &= false;
@@ -70,7 +73,7 @@ const validacion = () => {
   }
 
   if (values?.comentario == "" || values?.comentario == undefined) {
-    validacionMsg += "\n Comentario posee espacios en blanco";
+    validacionMsg.push("Comentario posee espacios en blanco");
     txtaComentario.style.border = "solid 1px red";
     txtaComentario.style.backgroundColor = "rgba(255, 0, 3, 0.4)";
     result &= false;
@@ -90,8 +93,73 @@ const validacion = () => {
 // /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 // ^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$ ?
 
+//####### Mensajes de Alertas Personalizados #######
+const msgSucces = (title, description) => {
+  let className = {
+    contentMsgRoot: "contentMsgRootSucces",
+    contentMsg: "contentMsgSucces",
+  };
+  showMsgPersonalizado({ title, description, className });
+};
 
+const msgWarning = (title, description) => {
+  let className = {
+    contentMsgRoot: "contentMsgRootWarning",
+    contentMsg: "contentMsgWarning",
+  };
+  showMsgPersonalizado({ title, description, className });
+};
 
+// show Mensajes
 
+const showMsgPersonalizado = (msgData) => {
+  console.log(msgData.className);
 
-// #########################
+  if (!Array.isArray(msgData?.description)) {
+    //si no es un array y es un json
+    console.log("No es un array");
+    return true;
+  } else {
+    let contentMsgRoot = document.createElement("div");
+    contentMsgRoot.className = "contentMsgRoot";
+    contentMsgRoot.classList.add(msgData.className.contentMsgRoot);
+    let contentMsg = document.createElement("div");
+    contentMsg.className = "contentMsg";
+    contentMsg.classList.add(msgData.className.contentMsg);
+
+    //Mensaje Header
+    let headerMsg = document.createElement("div");
+    let title = document.createElement("h3");
+    title.innerHTML = msgData?.title;
+    headerMsg.appendChild(title);
+
+    //Mensaje Body Descripcion
+    let bodyMsg = document.createElement("div");
+    msgData?.description.forEach((item) => {
+      let description = document.createElement("p");
+      description.innerHTML = item;
+      bodyMsg.appendChild(description);
+    });
+
+    //Mensaje Footer
+    let footerMsg = document.createElement("div");
+    let btnClose = document.createElement("button");
+    btnClose.innerHTML = "Cerrar";
+    footerMsg.appendChild(btnClose);
+
+    contentMsg.appendChild(headerMsg);
+    contentMsg.appendChild(bodyMsg);
+    contentMsg.appendChild(footerMsg);
+    contentMsgRoot.appendChild(contentMsg);
+    root.appendChild(contentMsgRoot);
+
+    btnClose.focus();
+
+    btnClose.onclick = () => {
+      contentMsgRoot.classList.remove(msgData.className.contentMsgRoot);
+      contentMsg.classList.remove(msgData.className.contentMsg);
+      contentMsgRoot.remove();
+      contentMsg.remove();
+    };
+  }
+};
