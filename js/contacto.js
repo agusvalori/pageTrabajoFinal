@@ -7,6 +7,7 @@ var inPhone = document.getElementById("inPhone");
 var selectInteres = document.getElementById("selectInteres");
 var txtaComentario = document.getElementById("txtaComentario");
 var btnSubmitContacto = document.getElementById("btnSubmitContacto");
+var longComentario = document.getElementById("longComentario");
 
 const HandleInputChange = (event) => {
   const { name, value } = event.target;
@@ -33,9 +34,9 @@ const HandleOnSubmit = () => {
 };
 
 const validacion = () => {
-  validacionMsg = [];  
+  validacionMsg = [];
   //validacion nombre
-  if (/\d+/.test(values?.name) || values?.name == undefined) {    
+  if (/\d+/.test(values?.name) || values?.name == undefined) {
     validacionMsg.push("Nombre: invalido o en blanco");
     inName.style.border = "solid 1px red";
     inName.style.backgroundColor = "rgba(255, 0, 3, 0.4)";
@@ -48,7 +49,7 @@ const validacion = () => {
   if (
     (values?.email != undefined && !/^\w+@\w+(\.\w{3})$/.test(values?.email)) ||
     /\s+/.test(values?.email)
-  ) {    
+  ) {
     validacionMsg.push("Correo: invalido o posee espacios en blanco");
     inEmail.style.border = "solid 1px red";
     inEmail.style.backgroundColor = "rgba(255, 0, 3, 0.4)";
@@ -61,22 +62,45 @@ const validacion = () => {
   if (!Number.isInteger(+values?.phone) || /\s+/.test(values?.phone)) {
     validacionMsg.push("Telefono: invalido o en blanco");
     inPhone.style.border = "solid 1px red";
-    inPhone.style.backgroundColor = "rgba(255, 0, 3, 0.4)";    
+    inPhone.style.backgroundColor = "rgba(255, 0, 3, 0.4)";
   } else {
     inPhone.style.border = "#00c2ff 1px solid";
     inPhone.style.backgroundColor = "white";
   }
 
-  if (values?.comentario == "" || values?.comentario == undefined) {
-    validacionMsg.push("Comentario: en blanco");
+  if (
+    values?.comentario == "" ||
+    values?.comentario == undefined ||
+    values?.comentario.length >= 800
+  ) {
+    values?.comentario.length >= 800
+      ? validacionMsg.push("Comentario: Tiene mas de 800 caracteres")
+      : validacionMsg.push("Comentario: en blanco");
+
     txtaComentario.style.border = "solid 1px red";
-    txtaComentario.style.backgroundColor = "rgba(255, 0, 3, 0.4)";    
+    txtaComentario.style.backgroundColor = "rgba(255, 0, 3, 0.4)";
   } else {
     txtaComentario.style.border = "#00c2ff 1px solid";
     txtaComentario.style.backgroundColor = "white";
   }
-  return validacionMsg.length ==0;
+  return validacionMsg.length == 0;
 };
+
+//validamos en tiempo real el textare
+txtaComentario.addEventListener("input", (event) => {
+  longComentario.innerHTML =
+    "Caracteres disponibles: " + (800 - event.target.value.length);
+
+  if (event.target.value.length > 0 && event.target.value.length <= 800) {
+    txtaComentario.style.border = "#00c2ff 1px solid";
+    txtaComentario.style.backgroundColor = "white";
+    longComentario.style.color = "#0097c5";
+  } else {
+    txtaComentario.style.border = "solid 1px red";
+    txtaComentario.style.backgroundColor = "rgba(255, 0, 3, 0.4)";
+    longComentario.style.color = "red";
+  }
+});
 
 //Expresiones regulares
 // /\s+/ si hay espacios en blancos
@@ -106,7 +130,6 @@ const msgWarning = (title, description) => {
 
 // show Mensajes
 const showMsgPersonalizado = (msgData) => {
-
   if (!Array.isArray(msgData?.description)) {
     //si no es un array y es un json
     console.log("No es un array");
@@ -136,7 +159,7 @@ const showMsgPersonalizado = (msgData) => {
     //Mensaje Footer
     let footerMsg = document.createElement("div");
     let btnClose = document.createElement("button");
-    btnClose.innerHTML = "cerrar";
+    btnClose.innerHTML = "CERRAR";
     footerMsg.appendChild(btnClose);
 
     contentMsg.appendChild(headerMsg);
@@ -167,11 +190,11 @@ const showMsgPersonalizado = (msgData) => {
       true
     );
 
-    onCloseMsgContent = ()=>{
+    onCloseMsgContent = () => {
       contentMsgRoot.classList.remove(msgData.className.contentMsgRoot);
       contentMsg.classList.remove(msgData.className.contentMsg);
       contentMsgRoot.remove();
       contentMsg.remove();
-    }
+    };
   }
 };

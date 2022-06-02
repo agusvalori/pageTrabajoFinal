@@ -90,7 +90,7 @@
               id="selectInteres"
               onchange="HandleInputChange(event)"
             >
-              <option disabled selected></option>
+              <option disabled selected>Seleccione una opcion</option>
               <option value="cliente">Cliente</option>
               <option value="proveedor">Proveedor</option>
             </select>
@@ -103,6 +103,7 @@
             rows="5"
             onchange="HandleInputChange(event)"
           ></textarea>
+          <label id="longComentario">Caracteres disponibles: 800</label>
 
           <button id="btnSubmitContacto" type="submit">Enviar</button>
         </form>

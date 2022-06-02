@@ -292,6 +292,8 @@ body {
   justify-content: space-evenly;
   align-items: center;
 
+  border-radius: 9px 9px 0px 0px;
+
   background-color: #00c2ff;
 }
 .categoryItems {
@@ -520,7 +522,7 @@ textarea {
   font-size: 25px;
 }
 .contentMsgSucces p{
-  
+  word-wrap: break-word;
   margin: 5px;
 }
 

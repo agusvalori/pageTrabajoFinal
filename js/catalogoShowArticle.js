@@ -63,8 +63,11 @@ export const catalogoShowArticle = (categotySelect) => {
     catalogoArticulos.appendChild(target);
   };
 
-  if (categotySelect !== "all") {
+  if (categotySelect !== "Todos") {
     catalogoArticulos.innerHTML = "";
     articulosCatalogo.filter(items=>items.category==categotySelect).forEach((article) => crearTarget(article));
-  }
+  }else{
+    catalogoArticulos.innerHTML=""
+    articulosCatalogo.forEach((article) => crearTarget(article));
+  }  
 };
