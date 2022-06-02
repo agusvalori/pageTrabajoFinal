@@ -33,13 +33,10 @@ const HandleOnSubmit = () => {
 };
 
 const validacion = () => {
-  validacionMsg = [];
-  result = true;
-
+  validacionMsg = [];  
   //validacion nombre
-  if (/\d+/.test(values?.name) || values?.name == undefined) {
-    result &= false;
-    validacionMsg.push(" Nombre invalido");
+  if (/\d+/.test(values?.name) || values?.name == undefined) {    
+    validacionMsg.push("Nombre: invalido o en blanco");
     inName.style.border = "solid 1px red";
     inName.style.backgroundColor = "rgba(255, 0, 3, 0.4)";
   } else {
@@ -51,9 +48,8 @@ const validacion = () => {
   if (
     (values?.email != undefined && !/^\w+@\w+(\.\w{3})$/.test(values?.email)) ||
     /\s+/.test(values?.email)
-  ) {
-    result &= false;
-    validacionMsg.push(" Correo invalido o posee espacios en blanco");
+  ) {    
+    validacionMsg.push("Correo: invalido o posee espacios en blanco");
     inEmail.style.border = "solid 1px red";
     inEmail.style.backgroundColor = "rgba(255, 0, 3, 0.4)";
   } else {
@@ -63,25 +59,23 @@ const validacion = () => {
 
   //validacion del celular
   if (!Number.isInteger(+values?.phone) || /\s+/.test(values?.phone)) {
-    validacionMsg.push("Telefono invalido o posee espacios en blanco");
+    validacionMsg.push("Telefono: invalido o en blanco");
     inPhone.style.border = "solid 1px red";
-    inPhone.style.backgroundColor = "rgba(255, 0, 3, 0.4)";
-    result &= false;
+    inPhone.style.backgroundColor = "rgba(255, 0, 3, 0.4)";    
   } else {
     inPhone.style.border = "#00c2ff 1px solid";
     inPhone.style.backgroundColor = "white";
   }
 
   if (values?.comentario == "" || values?.comentario == undefined) {
-    validacionMsg.push("Comentario posee espacios en blanco");
+    validacionMsg.push("Comentario: en blanco");
     txtaComentario.style.border = "solid 1px red";
-    txtaComentario.style.backgroundColor = "rgba(255, 0, 3, 0.4)";
-    result &= false;
+    txtaComentario.style.backgroundColor = "rgba(255, 0, 3, 0.4)";    
   } else {
     txtaComentario.style.border = "#00c2ff 1px solid";
     txtaComentario.style.backgroundColor = "white";
   }
-  return result;
+  return validacionMsg.length ==0;
 };
 
 //Expresiones regulares
@@ -111,9 +105,7 @@ const msgWarning = (title, description) => {
 };
 
 // show Mensajes
-
 const showMsgPersonalizado = (msgData) => {
-  console.log(msgData.className);
 
   if (!Array.isArray(msgData?.description)) {
     //si no es un array y es un json
@@ -144,7 +136,7 @@ const showMsgPersonalizado = (msgData) => {
     //Mensaje Footer
     let footerMsg = document.createElement("div");
     let btnClose = document.createElement("button");
-    btnClose.innerHTML = "Cerrar";
+    btnClose.innerHTML = "cerrar";
     footerMsg.appendChild(btnClose);
 
     contentMsg.appendChild(headerMsg);
@@ -156,10 +148,30 @@ const showMsgPersonalizado = (msgData) => {
     btnClose.focus();
 
     btnClose.onclick = () => {
+      onCloseMsgContent();
+    };
+
+    // salir al hacer click en el contenedor root
+    window.addEventListener(
+      "click",
+      (e) => {
+        if (
+          // container.contains(e.target)  muestra si estoy haciendo click en container en este caso esta en negado !
+          //  containerRoot.contains(container) muestra si existe container esto es para que no siga ejecutandoce la funcion
+          !contentMsg.contains(e.target) &&
+          contentMsgRoot.contains(contentMsg)
+        ) {
+          onCloseMsgContent();
+        }
+      },
+      true
+    );
+
+    onCloseMsgContent = ()=>{
       contentMsgRoot.classList.remove(msgData.className.contentMsgRoot);
       contentMsg.classList.remove(msgData.className.contentMsg);
       contentMsgRoot.remove();
       contentMsg.remove();
-    };
+    }
   }
 };

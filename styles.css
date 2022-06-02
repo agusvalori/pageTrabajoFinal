@@ -454,10 +454,8 @@ textarea {
   border-radius: 15px;
   background-color: #00b0e5;
   color: white;
-  font-size: 15px;  
+  font-size: 15px;
 }
-
-
 
 .sectionMap {
   display: flex;
@@ -474,7 +472,7 @@ textarea {
 
 /* ################# Show MENSAJES #######################*/
 
-.contentMsgRoot{
+.contentMsgRoot {
   position: absolute;
   top: 0px;
   left: 0px;
@@ -482,37 +480,76 @@ textarea {
   width: 100%;
   height: 100%;
 
-  
-
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.contentMsgRootWarning{
+.contentMsgRootWarning {
   background-color: rgba(255, 157, 0, 0.8);
 }
 
-.contentMsgRootSucces{
+.contentMsgRootSucces {
   background-color: rgba(21, 255, 0, 0.8);
 }
-.contentMsg{
-  width: 350px;
+.contentMsg {
+  width: 370px;
   padding: 10px;
 
   text-align: center;
 
   border-radius: 10px;
-  box-shadow: 5px 5px 10px rgb(255, 224, 168);
+
+  background-color: rgb(255, 255, 255);
+  color: black;
+  box-shadow: 5px 5px 10px ;
 }
 
-.contentMsgSucces{
-  background-color: #77dd77;
+.contentMsg button{
+  height: 30px;
+  width: 100px;
+  margin: 5px;
 
+  font-size: 18px;
+  border-radius: 10px;
+  border: transparent solid;
 }
 
+.contentMsgSucces h3{
+  color: green;
+  font-size: 25px;
+}
+.contentMsgSucces p{
+  
+  margin: 5px;
+}
 
-.contentMsgWarning{
-  background-color: rgb(208, 142, 0);
+.contentMsgSucces button{
+  background-color: green;
+  box-shadow: 5px 5px 1px rgb(125, 244, 125);
   color: white;
 }
+.contentMsgWarning  h3 {
+  color: orange;
+  font-size: 25px;
+}
+
+.contentMsgWarning p{
+  color: red;
+  margin: 5px;
+}
+
+.contentMsgWarning button{
+  background-color: orange;
+  box-shadow: 5px 5px 1px rgb(255, 205, 113);
+  color: white;
+}
+
+.contentMsg button:hover{
+  box-shadow: 0px 0px 0px ;
+  position: relative;
+
+  top: 5px;
+  left: 5px;
+}
+
