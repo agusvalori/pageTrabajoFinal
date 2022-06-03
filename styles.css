@@ -97,7 +97,7 @@ body {
   bottom: 0px;
 }
 
-.mainContact{
+.mainContact {
   height: 80%;
   overflow-y: scroll;
   padding-bottom: 50px;
@@ -189,6 +189,11 @@ body {
   box-shadow: 5px 5px 20px 5px;
 }
 
+.sliderHeader > h1 {
+  font-family: "Macondo", cursive;
+  font-size: 30px;
+}
+
 .sliderBody {
   width: 90vw;
   padding: 15px 0px;
@@ -258,7 +263,7 @@ body {
   margin: 10px;
   background-color: green;
   border-radius: 50%;
-  cursor: pointer;
+  cursor: pointer;  
 }
 
 .descripcion {
@@ -313,6 +318,9 @@ body {
 
   background-color: #fa8072;
   box-shadow: 2px 2px 0px 2px;
+  font-family: 'Macondo', cursive;
+  font-size: 18px;
+  
 }
 
 /*
@@ -327,7 +335,7 @@ body {
   background-color: #fffcb9;
 
   top: 5px;
-  left: 5px;
+  left: 5px;  
 }
 /* ------- catalogo Articulos ------- */
 .catalogoArticulos {
@@ -373,7 +381,7 @@ body {
   border-radius: 15px;
 }
 .targetBody {
-  width: 70%;  
+  width: 70%;
   border-radius: 15px;
 }
 
@@ -391,8 +399,11 @@ body {
 }
 
 .targetTitleText {
-  font-size: 25px;
+  font-family: "Macondo", cursive;
+  font-size: 30px;
   color: red;
+
+  text-align: center;
 }
 
 .targetDescription {
@@ -452,10 +463,12 @@ textarea {
   border-radius: 5px;
   border: #00c2ff 1px solid;
   background-color: white;
+
 }
 
 .formContacto label {
   color: #0097c5;
+  
 }
 
 .formSelect {
@@ -521,10 +534,10 @@ textarea {
 
   background-color: rgb(255, 255, 255);
   color: black;
-  box-shadow: 5px 5px 10px ;
+  box-shadow: 5px 5px 10px;
 }
 
-.contentMsg button{
+.contentMsg button {
   height: 30px;
   width: 100px;
   margin: 5px;
@@ -534,41 +547,40 @@ textarea {
   border: transparent solid;
 }
 
-.contentMsgSucces h3{
+.contentMsgSucces h3 {
   color: green;
   font-size: 25px;
 }
-.contentMsgSucces p{
+.contentMsgSucces p {
   word-wrap: break-word;
   margin: 5px;
 }
 
-.contentMsgSucces button{
+.contentMsgSucces button {
   background-color: green;
   box-shadow: 5px 5px 1px rgb(125, 244, 125);
   color: white;
 }
-.contentMsgWarning  h3 {
+.contentMsgWarning h3 {
   color: orange;
   font-size: 25px;
 }
 
-.contentMsgWarning p{
+.contentMsgWarning p {
   color: red;
   margin: 5px;
 }
 
-.contentMsgWarning button{
+.contentMsgWarning button {
   background-color: orange;
   box-shadow: 5px 5px 1px rgb(255, 205, 113);
   color: white;
 }
 
-.contentMsg button:hover{
-  box-shadow: 0px 0px 0px ;
+.contentMsg button:hover {
+  box-shadow: 0px 0px 0px;
   position: relative;
 
   top: 5px;
   left: 5px;
 }
-
