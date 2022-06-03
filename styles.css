@@ -97,6 +97,12 @@ body {
   bottom: 0px;
 }
 
+.mainContact{
+  height: 80%;
+  overflow-y: scroll;
+  padding-bottom: 50px;
+}
+
 .footerContainer {
   display: flex;
   justify-content: space-evenly;
@@ -357,29 +363,35 @@ body {
 
 .targetHeader {
   width: 30%;
-
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 }
 .targetImg {
   width: 90%;
   height: 90%;
+  border-radius: 15px;
 }
 .targetBody {
-  width: 70%;
-  background-color: blue;
+  width: 70%;  
+  border-radius: 15px;
 }
 
 .targetTitle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   width: 100%;
   height: 30%;
+
   background-color: #77dd77;
 
-  text-align: center;
+  border-radius: 15px 15px 0px 0px;
 }
 
 .targetTitleText {
+  font-size: 25px;
   color: red;
 }
 
@@ -388,11 +400,16 @@ body {
   height: 70%;
   background-color: orange;
 
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 0px 0px 15px 15px;
 }
 
 .targetDescriptionText {
-  font-size: 15px;
+  font-size: 18px;
+  text-align: center;
 }
 
 /* ################# PAGE CONTACTO #######################*/

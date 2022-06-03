@@ -1,6 +1,5 @@
-var values;
-var validacionMsg = "";
 var root = document.getElementById("root");
+var formContacto = document.getElementById("formContacto")
 var inName = document.getElementById("inName");
 var inEmail = document.getElementById("inEmail");
 var inPhone = document.getElementById("inPhone");
@@ -8,6 +7,9 @@ var selectInteres = document.getElementById("selectInteres");
 var txtaComentario = document.getElementById("txtaComentario");
 var btnSubmitContacto = document.getElementById("btnSubmitContacto");
 var longComentario = document.getElementById("longComentario");
+
+var values;
+var validacionMsg = "";
 
 const HandleInputChange = (event) => {
   const { name, value } = event.target;
@@ -24,8 +26,10 @@ const HandleOnSubmit = () => {
       "Comentario: " + values.comentario,
     ];
     msgSucces("Los datos se enviaron con exito", msgDescription);
-    // values = "";
-    //document.getElementById("formContacto").reset();
+    values = "";
+    formContacto.reset();
+    longComentario.innerHTML =
+    "Caracteres disponibles: 800";
   } else {
     msgWarning("Advertencia: Error al ingresar los datos", validacionMsg);
     //alert(validacionMsg);
@@ -86,7 +90,7 @@ const validacion = () => {
   return validacionMsg.length == 0;
 };
 
-//validamos en tiempo real el textare
+//validamos en tiempo real el textarea
 txtaComentario.addEventListener("input", (event) => {
   longComentario.innerHTML =
     "Caracteres disponibles: " + (800 - event.target.value.length);

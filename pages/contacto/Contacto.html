@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="esp">
+<html lang="es">
   <head>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -59,65 +59,106 @@
         </nav>
       </div>
     </header>
-    <section class="contactoBody">
-      <div class="contactoPaper">
-        <form
-          id="formContacto"
-          class="formContacto"
-          onsubmit="return HandleOnSubmit()"
-        >
-          <label>Nombre</label>
-          <input name="name" id="inName" onchange="HandleInputChange(event)" />
-
-          <label>Correo</label>
-          <input
-            name="email"
-            id="inEmail"
-            onchange="HandleInputChange(event)"
-          />
-
-          <label>Celular</label>
-          <input
-            name="phone"
-            id="inPhone"
-            onchange="HandleInputChange(event)"
-          />
-
-          <div class="formSelect flex-center w100">
-            <label>Su interes</label>
-            <select
-              name="selectInteres"
-              id="selectInteres"
+    <main class="mainContact">
+      <section class="contactoBody">
+        <div class="contactoPaper">
+          <form
+            id="formContacto"
+            class="formContacto"
+            onsubmit="return HandleOnSubmit()"
+          >
+            <label>Nombre</label>
+            <input
+              name="name"
+              id="inName"
               onchange="HandleInputChange(event)"
-            >
-              <option disabled selected>Seleccione una opcion</option>
-              <option value="cliente">Cliente</option>
-              <option value="proveedor">Proveedor</option>
-            </select>
-          </div>
+            />
 
-          <label>Comentario</label>
-          <textarea
-            id="txtaComentario"
-            name="comentario"
-            rows="5"
-            onchange="HandleInputChange(event)"
-          ></textarea>
-          <label id="longComentario">Caracteres disponibles: 800</label>
+            <label>Correo</label>
+            <input
+              name="email"
+              id="inEmail"
+              onchange="HandleInputChange(event)"
+            />
 
-          <button id="btnSubmitContacto" type="submit">Enviar</button>
-        </form>
+            <label>Celular</label>
+            <input
+              name="phone"
+              id="inPhone"
+              onchange="HandleInputChange(event)"
+            />
+
+            <div class="formSelect flex-center w100">
+              <label>Su interes</label>
+              <select
+                name="selectInteres"
+                id="selectInteres"
+                onchange="HandleInputChange(event)"
+              >
+                <option disabled selected>Seleccione una opcion</option>
+                <option value="cliente">Cliente</option>
+                <option value="proveedor">Proveedor</option>
+              </select>
+            </div>
+
+            <label>Comentario</label>
+            <textarea
+              id="txtaComentario"
+              name="comentario"
+              rows="5"
+              onchange="HandleInputChange(event)"
+            ></textarea>
+            <label id="longComentario">Caracteres disponibles: 800</label>
+
+            <button id="btnSubmitContacto" type="submit">Enviar</button>
+          </form>
+        </div>
+
+        <div class="sectionMap">
+          <iframe
+            class="maps"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1607.9937537679825!2d-65.46274493624696!3d-33.67452242952218!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x3edcde408ba2a24!2sM%26V%20Descartables%20y%20Condimentos!5e0!3m2!1ses-419!2sar!4v1652831934138!5m2!1ses-419!2sar"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="footerContainer">
+        <a target="_blank" href="https://g.page/distribuidoramyv?share">
+          <img
+            alt=""
+            class="footerItems"
+            src="../../archivos/icons/ubicacionIcons.png"
+          />
+        </a>
+        <a target="_blank" href="https://www.instagram.com/myvdescartables/">
+          <img
+            alt=""
+            class="footerItems"
+            src="../../archivos/icons/instagramIcons.png"
+          />
+        </a>
+        <a target="_blank" href="https://www.facebook.com/myvdescartables">
+          <img
+            alt=""
+            class="footerItems"
+            src="../../archivos/icons/facebookIcons.png"
+          />
+        </a>
+        <a
+          target="_blank"
+          href="https://api.whatsapp.com/send?phone=542664860724&text=Quiero+mas+información"
+        >
+          <img
+            alt=""
+            class="footerItems"
+            src="../../archivos/icons/whatsAppIcons.png"
+          />
+        </a>
       </div>
-
-      <div class="sectionMap">
-        <iframe
-          class="maps"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1607.9937537679825!2d-65.46274493624696!3d-33.67452242952218!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x3edcde408ba2a24!2sM%26V%20Descartables%20y%20Condimentos!5e0!3m2!1ses-419!2sar!4v1652831934138!5m2!1ses-419!2sar"
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-        ></iframe>
-      </div>
-    </section>
+    </footer>
     <script src="../../js/contacto.js"></script>
   </body>
 </html>

@@ -30,6 +30,7 @@ export const catalogoShowArticle = (categotySelect) => {
     const targetBody = document.createElement("div");
     targetBody.className = "targetBody";
 
+    //body titulo
     const targetTitle = document.createElement("div");
     targetTitle.className = "targetTitle";
 
@@ -38,6 +39,8 @@ export const catalogoShowArticle = (categotySelect) => {
     const titleText = document.createTextNode(article.title);
     targetTitleText.appendChild(titleText);
     targetTitle.appendChild(targetTitleText);
+
+    //body descripsion
 
     const targetDescription = document.createElement("div");
     targetDescription.className = "targetDescription";
@@ -48,10 +51,6 @@ export const catalogoShowArticle = (categotySelect) => {
     targetDescriptionText.appendChild(descriptionText);
     targetDescription.appendChild(targetDescriptionText);
 
-    const targetCategory = document.createElement("p");
-    const categoryText = document.createTextNode(article.category)
-    targetCategory.appendChild(categoryText)
-    targetDescription.appendChild(targetCategory)
 
     targetBody.appendChild(targetTitle);
     targetBody.appendChild(targetDescription);
